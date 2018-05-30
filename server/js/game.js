@@ -214,7 +214,13 @@ class Game {
 	exchange(playerId1, playerId2, i, j) {
 		var p1 = this.players.getById(playerId1);
 		var p2 = this.players.getById(playerId2);
-		p1.heap.transfer(i, p2.heap, j);
+		if (p1 && p2)
+			p1.heap.transfer(i, p2.heap, j);
+	}
+	see(playerId, i) {
+		var p = this.players.getById(playerId);
+		if (p)
+			return p.heap.get(i);
 	}
 	endLap(playerId) {
 		var playerCurr = this.playerCurrent();
