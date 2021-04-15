@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<meta name="viewport" content="height=device-height"/>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div id='fullscreen_'>
+			<div id='screen_'>
+
+				<div id='signal'></div>
+
+				<!-- MODAL -->
+				<div id="myModal" class="modal">
+					<div class="modal-content">
+						<form onsubmit="return false">
+							<div class="modal-header">
+								<h2>Authentification</h2>
+							</div>
+
+							<div class="modal-body">
+
+								<p><label for='modalName'>Nom:</label><input id='modalName' type='text' required/></p>
+								<p><label for='modalPassword'>Mot de passe:</label><input id='modalPassword' type='password' required/></p>
+								<p><label for='modalSalt'><abbr title="Renforce l'unicité du compte">Sel</abbr>:</label><input id='modalSalt' type='password'/></p>
+							</div>
+
+							<div class="modal-footer">
+								<button id='modalOk'>Ok</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- END MODAL -->
+
+				<!-- MODAL -->
+				<div id="modalGame" class="modal">
+					<div class="modal-content">
+						<form onsubmit="return false">
+							<div class="modal-header">
+								<span id='closeModalGame' class="close">&times;</span>
+								<h2>Nouvelle Partie</h2>
+							</div>
+
+							<div class="modal-body">
+								<p><label for='modalGameName'>Nom:</label><input id='modalGameName' type='text' required/></p>
+								<p><label for='modalGamePassword'>Mot de passe:</label><input id='modalGamePassword' type='password'/></p>
+							</div>
+
+							<div class="modal-footer">
+								<button id='modalGameOk'>Creer</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- END MODAL -->
+
+				<!-- MODAL -->
+				<div id="modalJoin" class="modal">
+					<div class="modal-content">
+						<form onsubmit="return false">
+							<div class="modal-header">
+								<span id='closeModalJoin' class="close">&times;</span>
+								<h2>Rejoindre Partie</h2>
+							</div>
+
+							<div class="modal-body">
+								<input id='modalJoinId' type='text'/>
+								<p><span>Nom:</span><span id='modalJoinName'></span></p>
+								<p><span>Joueurs:</span><span id='modalJoinPlayers'></span></p>
+								<p id='modalJoinPasswordP'><label for='modalJoinPassword'>Mot de passe:</label><input id='modalJoinPassword' type='password' required/></p>
+							</div>
+
+							<div class="modal-footer">
+								<button id='modalJoinOk'>Rejoindre</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- END MODAL -->
+
+				<!-- BUTTONS -->
+				<div id='options'>
+					<div id='options_button' button></div>
+					<ul id='options_list' hidden>
+					</ul>
+				</div>
+				<div id='fullscreen_button' class='bottom' button></div>
+				<div id='swap_button' hidden button></div>
+				<div id='launch_button' hidden button_pixel>Lancer</div>
+				<div id='ready_button' hidden button_pixel>Pret</div>
+				<!-- END BUTTONS -->
+
+				<!-- GAMES LIST -->
+				<div id='games_list'>
+					<h2>Liste Parties</h2>
+					<input id='games_list_search' type='text' placeholder='Rechercher...' />
+					<ul id='games_list_content'></ul>
+					<div class='footer'>
+						<button id='new_game'>Nouvelle partie</button>
+					</div>
+				</div>
+				<!-- END GAMES LIST -->
+
+				<div id='scores_page' hidden>
+					<div class="modal-header">
+						<span id='closeScores' class="close">&times;</span>
+						<h2>Scores</h2>
+					</div>
+					<table id='scores_content'></table>
+				</div>
+
+				<div id='tchat'>
+					<div id='tchat_history' hidden></div>
+					<p id='tchat_open'>&hellip;</p>
+					<p id='tchat_last' hidden></p>
+				</div>
+
+				<div id='grid'>
+					<div id='table'>
+
+						<div position='heap' button></div>
+						<div position='stack' button></div>
+
+					</div>
+				</div>
+				<div id='view'>
+					<p></p>
+					<div ground></div>
+				</div>
+			</div>
+		</div>
+
+		<script src='scripts/hash.js'></script>
+		<script src='scripts/socket_client.js'></script>
+		<script src='scripts/dom.js'></script>
+		<script src='scripts/sprite.js'></script>
+		<script src='scripts/game_manager.js'></script>
+		<script src='scripts/main.js'></script>
+	</body>
+</html>
